@@ -1,0 +1,688 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+}
+
+.presentation-wrapper {
+  width: 100%;
+  height: 100dvh;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-container {
+  flex: 1;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  min-height: 100%;
+  background: #ffffff;
+  position: relative;
+}
+
+.slide.active {
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Slide 1 - Portada */
+.slide-1 {
+  background: linear-gradient(135deg, #B30000 0%, #8B0000 100%);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5%;
+}
+
+.slide-1 h1 {
+  font-size: 4em;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.slide-1 h2 {
+  font-size: 1.8em;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 2em;
+  opacity: 0.9;
+}
+
+/* Slide 2 - Introducción */
+.slide-2 {
+  background: #ffffff;
+  padding: 5%;
+}
+
+.slide-2 .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4em;
+  height: 100%;
+  align-items: center;
+}
+
+.slide-2 h1 {
+  font-size: 3.5em;
+  color: #B30000;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+.slide-2 p {
+  font-size: 1.3em;
+  color: #333333;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* Slide 3 - Pantalla Bienvenida */
+.slide-3 {
+  background: #ffffff;
+  padding: 5%;
+}
+
+.slide-3 .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4em;
+  height: 100%;
+  align-items: center;
+}
+
+.slide-3 h1 {
+  font-size: 3.5em;
+  color: #B30000;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+.slide-3 .feature-box {
+  background: #f8f8f8;
+  padding: 2em;
+  border-radius: 15px;
+  margin-bottom: 1.5em;
+  border-left: 5px solid #B30000;
+}
+
+.slide-3 .feature-box h3 {
+  color: #B30000;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.slide-3 .feature-box p {
+  color: #555555;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Slide 4 - Validación Email */
+.slide-4 {
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
+  padding: 5%;
+}
+
+.slide-4 .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slide-4 h1 {
+  font-size: 3.5em;
+  color: #B30000;
+  margin-bottom: 0.3em;
+  font-weight: 700;
+}
+
+.slide-4 .step-number {
+  display: inline-block;
+  background: #B30000;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  line-height: 60px;
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.slide-4 p {
+  font-size: 1.4em;
+  color: #333333;
+  line-height: 1.8;
+  margin-bottom: 2em;
+}
+
+.slide-4 .info-box {
+  background: white;
+  padding: 2.5em;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(179,0,0,0.1);
+  margin-top: 1em;
+  text-align: left;
+}
+
+.slide-4 .info-box h3 {
+  color: #B30000;
+  font-size: 1.3em;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+}
+
+.slide-4 .info-box p {
+  font-size: 1.1em;
+  color: #555555;
+}
+
+/* Slide 5 - Contraseña */
+.slide-5 {
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
+  padding: 5%;
+}
+
+.slide-5 .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slide-5 h1 {
+  font-size: 3.5em;
+  color: #B30000;
+  margin-bottom: 0.3em;
+  font-weight: 700;
+}
+
+.slide-5 .step-number {
+  display: inline-block;
+  background: #B30000;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  line-height: 60px;
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.slide-5 p {
+  font-size: 1.4em;
+  color: #333333;
+  line-height: 1.8;
+  margin-bottom: 2em;
+}
+
+.slide-5 .requirements {
+  background: white;
+  padding: 2.5em;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(179,0,0,0.1);
+  text-align: left;
+  margin-top: 1em;
+}
+
+.slide-5 .requirements h3 {
+  color: #B30000;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.slide-5 .requirement-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+
+.slide-5 .requirement-item::before {
+  content: "✓";
+  color: #B30000;
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-right: 0.8em;
+}
+
+.slide-5 .info-box {
+  background: white;
+  padding: 2.5em;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(179,0,0,0.1);
+  margin-top: 1em;
+  text-align: left;
+}
+
+.slide-5 .info-box h3 {
+  color: #B30000;
+  font-size: 1.3em;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+}
+
+.slide-5 .info-box p {
+  font-size: 1.1em;
+  color: #555555;
+}
+
+/* Slide 6 - Confirmación */
+.slide-6 {
+  background: linear-gradient(135deg, #B30000 0%, #8B0000 100%);
+  padding: 5%;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-6 .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slide-6 .step-number {
+  display: inline-block;
+  background: white;
+  color: #B30000;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  line-height: 60px;
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.slide-6 h1 {
+  font-size: 3.5em;
+  color: white;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+.slide-6 p {
+  font-size: 1.4em;
+  color: white;
+  line-height: 1.8;
+}
+
+/* Slide 7 - Login */
+.slide-7 {
+  background: #ffffff;
+  padding: 5%;
+}
+
+.slide-7 .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slide-7 h1 {
+  font-size: 3.5em;
+  color: #B30000;
+  margin-bottom: 1em;
+  font-weight: 700;
+}
+
+.slide-7 .info-box {
+  background: #f8f8f8;
+  padding: 2.5em;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(179,0,0,0.1);
+  margin-top: 1em;
+  text-align: left;
+}
+
+.slide-7 .info-box h3 {
+  color: #B30000;
+  font-size: 1.3em;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+}
+
+.slide-7 .info-box p {
+  font-size: 1.1em;
+  color: #555555;
+}
+
+/* Slide 8 - Panel Principal */
+.slide-8 {
+  background: #ffffff;
+  padding: 5%;
+}
+
+.slide-8 .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4em;
+  height: 100%;
+  align-items: center;
+}
+
+.slide-8 h1 {
+  font-size: 3.5em;
+  color: #B30000;
+  margin-bottom: 1em;
+  font-weight: 700;
+}
+
+.slide-8 .feature {
+  background: #f8f8f8;
+  padding: 2em;
+  border-radius: 15px;
+  margin-bottom: 1.5em;
+  border-left: 5px solid #B30000;
+}
+
+.slide-8 .feature h3 {
+  color: #B30000;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.slide-8 .feature p {
+  color: #555555;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Slide 10 - Cierre */
+.slide-10 {
+  background: linear-gradient(135deg, #B30000 0%, #8B0000 100%);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5%;
+}
+
+.slide-10 h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1em;
+  line-height: 1.3;
+}
+
+.slide-10 p {
+  font-size: 1.6em;
+  color: #ffffff;
+  opacity: 0.9;
+  margin-bottom: 3em;
+}
+
+.slide-10 .contact-box {
+  background: rgba(255,255,255,0.1);
+  padding: 2em 3em;
+  border-radius: 15px;
+  display: inline-block;
+  backdrop-filter: blur(10px);
+}
+
+.slide-10 .contact-box p {
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+}
+
+/* Navigation Controls */
+.controls {
+  background: #2a2a2a;
+  padding: 1.5em 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1em;
+}
+
+.nav-btn {
+  background: #B30000;
+  color: white;
+  border: none;
+  padding: 0.8em 2em;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: #8B0000;
+  transform: translateY(-2px);
+}
+
+.nav-btn:disabled {
+  background: #555555;
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.5;
+}
+
+.slide-counter {
+  color: white;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Typography */
+  .slide-1 h1 { font-size: 2.5em; }
+  .slide-1 h2 { font-size: 1.2em; }
+  .slide-2 h1, .slide-3 h1, .slide-4 h1, .slide-5 h1, .slide-6 h1, .slide-7 h1, .slide-8 h1, .slide-9 h1 {
+    font-size: 2em;
+  }
+  .slide-10 h1 { font-size: 2em; }
+  .slide-10 p { font-size: 1.2em; }
+  
+  /* All 2-column grids to 1 column on mobile */
+  .slide-2 .content, 
+  .slide-3 .content, 
+  .slide-8 .content,
+  .slide-4 .content > div,
+  .slide-5 .content > div,
+  .slide-6 .content > div,
+  .slide-7 .content > div {
+    grid-template-columns: 1fr !important;
+    gap: 1.5em;
+  }
+  
+  /* Improve spacing on mobile */
+  .slide {
+    padding: 3% 5%;
+  }
+  
+  .slide-1, .slide-10 {
+    padding: 8% 5%;
+  }
+  
+  /* Better feature boxes on mobile */
+  .feature-box, .feature {
+    padding: 1.5em;
+    margin-bottom: 1em;
+  }
+  
+  .info-box, .requirements {
+    padding: 1.5em;
+  }
+  
+  /* Images full width on mobile */
+  .slide img {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .slide-1 img {
+    width: 80% !important;
+  }
+  
+  /* Contact box mobile */
+  .contact-box {
+    padding: 1.5em 2em !important;
+  }
+  
+  .contact-box p {
+    font-size: 1.1em !important;
+  }
+  
+  /* Navigation controls mobile */
+  .controls {
+    padding: 1em 1.5em;
+    flex-direction: column;
+    gap: 0.8em;
+  }
+  
+  .nav-buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .nav-btn {
+    padding: 0.8em 1.8em;
+    font-size: 1em;
+    flex: 1;
+  }
+  
+  .slide-counter {
+    order: -1;
+  }
+  
+  /* Download buttons mobile - stacked and larger */
+  .download-buttons {
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    padding: 0 1em;
+  }
+  
+  .download-btn {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
+
+/* Download buttons */
+.download-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid #000;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.download-btn.primary {
+  background: linear-gradient(180deg,#ff4d4d,#b30000);
+  color: #fff;
+  border-color: #000000a1;
+}
+
+.download-btn.secondary {
+  background: #fff;
+  color: #111;
+  border-color: #000000a1;
+}
+
+.download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+.download-btn:focus {
+  outline: 3px solid rgba(179,0,0,0.18);
+  outline-offset: 3px;
+}
+
+/* Drive CTA note */
+.drive-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.drive-note {
+  color: #fff;
+  max-width: 720px;
+  text-align: center;
+  opacity: 0.95;
+}
+
+.download-btn.primary {
+  /* ensure good contrast on dark backgrounds */
+  box-shadow: 0 8px 24px rgba(179,0,0,0.18);
+}

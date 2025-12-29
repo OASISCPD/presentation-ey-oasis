@@ -1,0 +1,1084 @@
+<!doctype html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ey Oasis - Presentación</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      overflow: hidden;
+    }
+
+    .presentation-wrapper {
+      width: 100%;
+      height: 100%;
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide-container {
+      flex: 1;
+      position: relative;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      min-height: 100%;
+      background: #ffffff;
+      position: relative;
+    }
+
+    .slide.active {
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Slide 1 - Portada */
+    .slide-1 {
+      background: linear-gradient(135deg, #B30000 0%, #8B0000 100%);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 5%;
+    }
+
+    .slide-1 h1 {
+      font-size: 4em;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .slide-1 h2 {
+      font-size: 1.8em;
+      font-weight: 300;
+      color: #ffffff;
+      margin-bottom: 2em;
+      opacity: 0.9;
+    }
+
+    .slide-1 .image-placeholder {
+      width: 60%;
+      max-width: 500px;
+      aspect-ratio: 16/10;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      border: 3px dashed rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      color: rgba(255,255,255,0.6);
+      margin: 0 auto;
+    }
+
+    /* Slide 2 - Introducción */
+    .slide-2 {
+      background: #ffffff;
+      padding: 5%;
+    }
+
+    .slide-2 .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4em;
+      height: 100%;
+      align-items: center;
+    }
+
+    .slide-2 h1 {
+      font-size: 3.5em;
+      color: #B30000;
+      margin-bottom: 0.5em;
+      font-weight: 700;
+    }
+
+    .slide-2 p {
+      font-size: 1.3em;
+      color: #333333;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    .slide-2 .image-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: #f5f5f5;
+      border-radius: 20px;
+      border: 3px dashed #cccccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999999;
+      font-size: 1.1em;
+    }
+
+    /* Slide 3 - Pantalla Bienvenida */
+    .slide-3 {
+      background: #ffffff;
+      padding: 5%;
+    }
+
+    .slide-3 .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4em;
+      height: 100%;
+      align-items: center;
+    }
+
+    .slide-3 h1 {
+      font-size: 3.5em;
+      color: #B30000;
+      margin-bottom: 0.5em;
+      font-weight: 700;
+    }
+
+    .slide-3 .feature-box {
+      background: #f8f8f8;
+      padding: 2em;
+      border-radius: 15px;
+      margin-bottom: 1.5em;
+      border-left: 5px solid #B30000;
+    }
+
+    .slide-3 .feature-box h3 {
+      color: #B30000;
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+      font-weight: 600;
+    }
+
+    .slide-3 .feature-box p {
+      color: #555555;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .slide-3 .image-placeholder {
+      width: 100%;
+      aspect-ratio: 9/16;
+      background: #f5f5f5;
+      border-radius: 20px;
+      border: 3px dashed #cccccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999999;
+      font-size: 1.1em;
+    }
+
+    /* Slide 4 - Validación Email */
+    .slide-4 {
+      background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
+      padding: 5%;
+    }
+
+    .slide-4 .content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide-4 h1 {
+      font-size: 3.5em;
+      color: #B30000;
+      margin-bottom: 0.3em;
+      font-weight: 700;
+    }
+
+    .slide-4 .step-number {
+      display: inline-block;
+      background: #B30000;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      line-height: 60px;
+      font-size: 1.8em;
+      font-weight: 700;
+      margin-bottom: 1em;
+    }
+
+    .slide-4 p {
+      font-size: 1.4em;
+      color: #333333;
+      line-height: 1.8;
+      margin-bottom: 2em;
+    }
+
+    .slide-4 .info-box {
+      background: white;
+      padding: 2.5em;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(179,0,0,0.1);
+      margin-top: 1em;
+    }
+
+    .slide-4 .info-box h3 {
+      color: #B30000;
+      font-size: 1.3em;
+      margin-bottom: 0.8em;
+      font-weight: 600;
+    }
+
+    .slide-4 .info-box p {
+      font-size: 1.1em;
+      color: #555555;
+    }
+
+    /* Slide 5 - Contraseña */
+    .slide-5 {
+      background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
+      padding: 5%;
+    }
+
+    .slide-5 .content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide-5 h1 {
+      font-size: 3.5em;
+      color: #B30000;
+      margin-bottom: 0.3em;
+      font-weight: 700;
+    }
+
+    .slide-5 .step-number {
+      display: inline-block;
+      background: #B30000;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      line-height: 60px;
+      font-size: 1.8em;
+      font-weight: 700;
+      margin-bottom: 1em;
+    }
+
+    .slide-5 p {
+      font-size: 1.4em;
+      color: #333333;
+      line-height: 1.8;
+      margin-bottom: 2em;
+    }
+
+    .slide-5 .requirements {
+      background: white;
+      padding: 2.5em;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(179,0,0,0.1);
+      text-align: left;
+      margin-top: 1em;
+    }
+
+    .slide-5 .requirements h3 {
+      color: #B30000;
+      font-size: 1.5em;
+      margin-bottom: 1em;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .slide-5 .requirement-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1em;
+      font-size: 1.2em;
+    }
+
+    .slide-5 .requirement-item::before {
+      content: "✓";
+      color: #B30000;
+      font-weight: 700;
+      font-size: 1.5em;
+      margin-right: 0.8em;
+    }
+
+    /* Slide 6 - Confirmación */
+    .slide-6 {
+      background: linear-gradient(135deg, #B30000 0%, #8B0000 100%);
+      padding: 5%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide-6 .content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      background: rgba(255,255,255,0.95);
+      padding: 4em;
+      border-radius: 25px;
+    }
+
+    .slide-6 .success-icon {
+      width: 100px;
+      height: 100px;
+      background: #B30000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5em;
+      font-size: 3em;
+      color: white;
+    }
+
+    .slide-6 h1 {
+      font-size: 3.5em;
+      color: #B30000;
+      margin-bottom: 0.5em;
+      font-weight: 700;
+    }
+
+    .slide-6 p {
+      font-size: 1.4em;
+      color: #333333;
+      line-height: 1.8;
+    }
+
+    .slide-6 .user-info {
+      background: #f8f8f8;
+      padding: 1.5em;
+      border-radius: 10px;
+      margin-top: 2em;
+      font-size: 1.2em;
+      color: #555555;
+    }
+
+    /* Slide 7 - Login */
+    .slide-7 {
+      background: #ffffff;
+      padding: 5%;
+    }
+
+    .slide-7 .content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide-7 h1 {
+      font-size: 3.5em;
+      color: #B30000;
+      margin-bottom: 1em;
+      font-weight: 700;
+    }
+
+    .slide-7 .login-form {
+      background: #f8f8f8;
+      padding: 3em;
+      border-radius: 20px;
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .slide-7 .form-field {
+      margin-bottom: 2em;
+      text-align: left;
+    }
+
+    .slide-7 .form-field label {
+      display: block;
+      color: #333333;
+      font-size: 1.1em;
+      margin-bottom: 0.5em;
+      font-weight: 600;
+    }
+
+    .slide-7 .form-field .input-box {
+      background: white;
+      padding: 1em;
+      border-radius: 10px;
+      border: 2px solid #e0e0e0;
+      font-size: 1.1em;
+      color: #666666;
+    }
+
+    .slide-7 .login-button {
+      background: #B30000;
+      color: white;
+      padding: 1.2em 3em;
+      border-radius: 10px;
+      font-size: 1.2em;
+      font-weight: 600;
+      margin-top: 1em;
+      display: inline-block;
+    }
+
+    /* Slide 8 - Panel Principal */
+    .slide-8 {
+      background: #ffffff;
+      padding: 5%;
+    }
+
+    .slide-8 .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4em;
+      height: 100%;
+      align-items: center;
+    }
+
+    .slide-8 h1 {
+      font-size: 3.5em;
+      color: #B30000;
+      margin-bottom: 1em;
+      font-weight: 700;
+    }
+
+    .slide-8 .feature {
+      background: #f8f8f8;
+      padding: 2em;
+      border-radius: 15px;
+      margin-bottom: 1.5em;
+      border-left: 5px solid #B30000;
+    }
+
+    .slide-8 .feature h3 {
+      color: #B30000;
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+      font-weight: 600;
+    }
+
+    .slide-8 .feature p {
+      color: #555555;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .slide-8 .image-placeholder {
+      width: 100%;
+      aspect-ratio: 9/16;
+      background: #f5f5f5;
+      border-radius: 20px;
+      border: 3px dashed #cccccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999999;
+      font-size: 1.1em;
+    }
+
+    /* Slide 9 - Navegación */
+    .slide-9 {
+      background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
+      padding: 5%;
+    }
+
+    .slide-9 .content {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide-9 h1 {
+      font-size: 3.5em;
+      color: #B30000;
+      margin-bottom: 1.5em;
+      font-weight: 700;
+    }
+
+    .slide-9 .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2em;
+      margin-top: 2em;
+    }
+
+    .slide-9 .nav-item {
+      background: white;
+      padding: 2em;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .slide-9 .nav-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(179,0,0,0.15);
+    }
+
+    .slide-9 .nav-icon {
+      width: 60px;
+      height: 60px;
+      background: #B30000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1em;
+      font-size: 1.8em;
+      color: white;
+    }
+
+    .slide-9 .nav-item h3 {
+      color: #333333;
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+
+    /* Slide 10 - Cierre */
+    .slide-10 {
+      background: linear-gradient(135deg, #B30000 0%, #8B0000 100%);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 5%;
+    }
+
+    .slide-10 h1 {
+      font-size: 3.5em;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1em;
+      line-height: 1.3;
+    }
+
+    .slide-10 p {
+      font-size: 1.6em;
+      color: #ffffff;
+      opacity: 0.9;
+      margin-bottom: 3em;
+    }
+
+    .slide-10 .contact-box {
+      background: rgba(255,255,255,0.1);
+      padding: 2em 3em;
+      border-radius: 15px;
+      display: inline-block;
+      backdrop-filter: blur(10px);
+    }
+
+    .slide-10 .contact-box p {
+      font-size: 1.3em;
+      margin-bottom: 0.5em;
+    }
+
+    /* Navigation Controls */
+    .controls {
+      background: #2a2a2a;
+      padding: 1.5em 3em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      bottom: 0;
+      z-index: 1000;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 1em;
+    }
+
+    .nav-btn {
+      background: #B30000;
+      color: white;
+      border: none;
+      padding: 0.8em 2em;
+      border-radius: 8px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .nav-btn:hover {
+      background: #8B0000;
+      transform: translateY(-2px);
+    }
+
+    .nav-btn:disabled {
+      background: #555555;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .slide-counter {
+      color: white;
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .slide-1 h1 { font-size: 2.5em; }
+      .slide-1 h2 { font-size: 1.2em; }
+      .slide-2 .content, .slide-3 .content, .slide-8 .content {
+        grid-template-columns: 1fr;
+        gap: 2em;
+      }
+      .slide-2 h1, .slide-3 h1, .slide-4 h1, .slide-5 h1, .slide-6 h1, .slide-7 h1, .slide-8 h1, .slide-9 h1 {
+        font-size: 2em;
+      }
+      .slide-9 .nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .slide-10 h1 { font-size: 2em; }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="presentation-wrapper">
+   <div class="slide-container">
+    
+    <!-- Slide 1: Portada -->
+    <div class="slide slide-1 active">
+     <h1>Ey Oasis</h1>
+     <h2>Tu Oasis de Entretenimiento</h2>
+     <p style="font-size: 1.2em; color: rgba(255,255,255,0.8); margin-bottom: 2em;">Guía completa del flujo de registro y uso</p>
+     <img src="assets/index.jpeg" alt="Ey Oasis" style="width: 60%; max-width: 500px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+    </div>
+
+    <!-- Slide 2: ¿Qué es Ey Oasis? -->
+    <div class="slide slide-2">
+     <div class="content">
+      <div>
+       <h1>¿Qué es Ey Oasis?</h1>
+       <p>Ey Oasis es tu aplicación de entretenimiento todo-en-uno que une gastronomía, gestión de créditos y asistencia personalizada en salas de entretenimiento.</p>
+       <p style="margin-top: 1.5em;">Una experiencia completa diseñada para hacer tu tiempo libre más placentero y conveniente.</p>
+      </div>
+      <img src="assets/initPageLoading.jpeg" alt="App Principal" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+     </div>
+    </div>
+
+    <!-- Slide 3: Pantalla de Bienvenida -->
+    <div class="slide slide-3">
+     <div class="content">
+      <div>
+       <h1>Pantalla de Bienvenida</h1>
+       <div class="feature-box">
+        <h3>Iniciar Sesión</h3>
+        <p>Si ya tienes cuenta, accede con tu usuario y contraseña.</p>
+       </div>
+       <div class="feature-box">
+        <h3>Crear Cuenta Nueva</h3>
+        <p>Nuevos usuarios pueden registrarse siguiendo un proceso simple y seguro de 5 pasos.</p>
+       </div>
+      </div>
+      <img src="assets/welcomePage.jpeg" alt="Pantalla de Bienvenida" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+     </div>
+    </div>
+
+    <!-- Slide 4: Paso 1 - Email -->
+    <div class="slide slide-4">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start;">
+       <div>
+        <div class="step-number">1</div>
+        <h1>Registro: Email</h1>
+        <p>El cliente ingresa su correo electrónico para iniciar el proceso de registro.</p>
+        <div class="info-box">
+         <h3>¿Qué decirle al cliente?</h3>
+         <p>"Por favor ingresa tu correo electrónico. Te enviaremos un código de verificación para confirmar tu identidad."</p>
+        </div>
+       </div>
+       <img src="assets/1step.jpeg" alt="Paso 1 - Email" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 5: Paso 1 - Verificación Email -->
+    <div class="slide slide-4">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start;">
+       <div>
+        <div class="step-number">1</div>
+        <h1>Verificación de Email</h1>
+        <p>Se envía un código de 6 dígitos al correo electrónico proporcionado.</p>
+        <div class="info-box">
+         <h3>¿Qué decirle al cliente?</h3>
+         <p>"Revisa tu correo, te hemos enviado un código de 6 dígitos. Ingrésalo aquí para verificar tu email."</p>
+        </div>
+       </div>
+       <img src="assets/1stepMail.jpeg" alt="Verificación Email" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 6: Alerta Email -->
+    <div class="slide slide-4">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start;">
+       <div>
+        <div class="step-number">1</div>
+        <h1>Confirmación de Email</h1>
+        <p>La app muestra alertas para confirmar la verificación del correo.</p>
+        <div class="info-box">
+         <h3>Mensaje al cliente</h3>
+         <p>"Tu correo ha sido verificado exitosamente. Ahora continuaremos con el siguiente paso."</p>
+        </div>
+       </div>
+       <img src="assets/EmailVerifyAlert.jpeg" alt="Alerta Email Verificado" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 7: Paso 2 - Código -->
+    <div class="slide slide-5">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start;">
+       <div>
+        <div class="step-number">2</div>
+        <h1>Creación de Contraseña</h1>
+        <p>El cliente debe crear una contraseña segura para su cuenta.</p>
+        <div class="requirements">
+         <h3>Requisitos de Seguridad</h3>
+         <div class="requirement-item">Mínimo 8 caracteres</div>
+         <div class="requirement-item">Al menos una mayúscula</div>
+         <div class="requirement-item">Al menos una minúscula</div>
+         <div class="requirement-item">Al menos un número</div>
+        </div>
+       </div>
+       <img src="assets/2stepCode.jpeg" alt="Crear Contraseña" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 8: Paso 2 - Contraseña Exitosa -->
+    <div class="slide slide-5">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start;">
+       <div>
+        <div class="step-number">2</div>
+        <h1>Contraseña Confirmada</h1>
+        <p>La contraseña cumple con los requisitos y ha sido establecida correctamente.</p>
+        <div class="info-box">
+         <h3>Mensaje al cliente</h3>
+         <p>"¡Perfecto! Tu contraseña ha sido creada exitosamente. Ahora verificaremos tu identidad con tu DNI."</p>
+        </div>
+       </div>
+       <img src="assets/2stepCodeSuccess.jpeg" alt="Contraseña Exitosa" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 9: Paso 3 - Solicitud de Permisos -->
+    <div class="slide slide-5">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start;">
+       <div>
+        <div class="step-number">3</div>
+        <h1>Permisos de Cámara</h1>
+        <p>La app solicita permiso para acceder a la cámara del dispositivo.</p>
+        <div class="info-box">
+         <h3>¿Qué decirle al cliente?</h3>
+         <p>"Necesitamos acceso a tu cámara para escanear tu DNI. Toca 'Permitir' para continuar."</p>
+        </div>
+       </div>
+       <img src="assets/permision3Step.jpeg" alt="Permisos Cámara" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 10: Paso 3 - Primera Pantalla DNI -->
+    <div class="slide slide-5">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start;">
+       <div>
+        <div class="step-number">3</div>
+        <h1>Instrucciones DNI</h1>
+        <p>Se muestran instrucciones para escanear el documento.</p>
+        <div class="info-box">
+         <h3>Guía al cliente</h3>
+         <p>"Coloca tu DNI en un lugar con buena iluminación. Asegúrate de que esté completo dentro del marco."</p>
+        </div>
+       </div>
+       <img src="assets/3stepFirst.jpeg" alt="Instrucciones DNI" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 11: Paso 3 - Alerta Escaneo DNI -->
+    <div class="slide slide-5">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start;">
+       <div>
+        <div class="step-number">3</div>
+        <h1>Preparación del Escaneo</h1>
+        <p>Alerta indicando que se preparará el escaneo del DNI.</p>
+        <div class="info-box">
+         <h3>Mensaje al cliente</h3>
+         <p>"Prepara tu DNI. En la siguiente pantalla podrás escanearlo usando la cámara de tu dispositivo."</p>
+        </div>
+       </div>
+       <img src="assets/alertDniScan.jpeg" alt="Alerta Escaneo" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 12: Paso 3 - Escaneo DNI -->
+    <div class="slide slide-5">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start;">
+       <div>
+        <div class="step-number">3</div>
+        <h1>Escaneando DNI</h1>
+        <p>El cliente escanea su DNI usando la cámara del dispositivo.</p>
+        <div class="info-box">
+         <h3>Asistencia al cliente</h3>
+         <p>"Mantén el DNI dentro del marco. La app lo capturará automáticamente cuando esté enfocado correctamente."</p>
+        </div>
+       </div>
+       <img src="assets/scanDni.jpeg" alt="Escaneo DNI" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 13: Paso 3 - DNI Capturado -->
+    <div class="slide slide-5">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start;">
+       <div>
+        <div class="step-number">3</div>
+        <h1>DNI Verificado</h1>
+        <p>El sistema procesa y verifica la información del documento.</p>
+        <div class="info-box">
+         <h3>Confirmación</h3>
+         <p>"Tu DNI ha sido capturado exitosamente. Estamos verificando tu información..."</p>
+        </div>
+       </div>
+       <img src="assets/3stepDni.jpeg" alt="DNI Verificado" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 14: Paso 4 -->
+    <div class="slide slide-5">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start;">
+       <div>
+        <div class="step-number">4</div>
+        <h1>Información Personal</h1>
+        <p>El cliente completa sus datos personales adicionales.</p>
+        <div class="info-box">
+         <h3>Orientación</h3>
+         <p>"Completa tu información personal. Estos datos nos ayudan a brindarte una mejor experiencia personalizada."</p>
+        </div>
+       </div>
+       <img src="assets/4step.jpeg" alt="Paso 4" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 15: Paso 5 -->
+    <div class="slide slide-6">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start; background: transparent;">
+       <div style="text-align: left;">
+        <div class="step-number">5</div>
+        <h1 style="color: white;">Confirmación Final</h1>
+        <p style="color: rgba(255,255,255,0.9);">Revisión de datos antes de completar el registro.</p>
+        <div style="background: rgba(255,255,255,0.95); padding: 2em; border-radius: 15px; margin-top: 2em;">
+         <h3 style="color: #B30000;">Mensaje final</h3>
+         <p style="color: #333;">"Revisa que toda tu información sea correcta. Luego presiona 'Confirmar' para finalizar tu registro."</p>
+        </div>
+       </div>
+       <img src="assets/5step.jpeg" alt="Paso 5" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 16: Paso 5 - Alerta Final -->
+    <div class="slide slide-6">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start; background: transparent;">
+       <div style="text-align: left;">
+        <div class="step-number">5</div>
+        <h1 style="color: white;">¡Registro Exitoso!</h1>
+        <p style="color: rgba(255,255,255,0.9);">La cuenta ha sido creada correctamente.</p>
+        <div style="background: rgba(255,255,255,0.95); padding: 2em; border-radius: 15px; margin-top: 2em;">
+         <h3 style="color: #B30000;">¡Felicidades!</h3>
+         <p style="color: #333;">"¡Bienvenido a Ey Oasis! Tu cuenta ha sido creada exitosamente. Ya puedes iniciar sesión."</p>
+        </div>
+       </div>
+       <img src="assets/5stepAlert.jpeg" alt="Registro Exitoso" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 17: Login -->
+    <div class="slide slide-7">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start;">
+       <div>
+        <h1>Inicio de Sesión</h1>
+        <p style="font-size: 1.2em; color: #555; margin: 1.5em 0;">Usuarios registrados ingresan con su número de usuario y contraseña.</p>
+        <div class="info-box">
+         <h3>Para usuarios que ya tienen cuenta</h3>
+         <p>"Ingresa tu número de usuario y contraseña para acceder a tu cuenta de Ey Oasis."</p>
+        </div>
+      </div>
+       <img src="assets/login.jpeg" alt="Login" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 18: Login Exitoso -->
+    <div class="slide slide-7">
+     <div class="content">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3em; align-items: start;">
+       <div>
+        <h1>Acceso Concedido</h1>
+        <p style="font-size: 1.2em; color: #555; margin: 1.5em 0;">El sistema confirma el inicio de sesión exitoso.</p>
+        <div class="info-box">
+         <h3>Confirmación</h3>
+         <p>"¡Bienvenido de nuevo! Has iniciado sesión correctamente. Redirigiendo a la pantalla principal..."</p>
+        </div>
+       </div>
+       <img src="assets/loginSuccess.jpeg" alt="Login Exitoso" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+     </div>
+    </div>
+
+    <!-- Slide 19: Pantalla Principal -->
+    <div class="slide slide-8">
+     <div class="content">
+      <div>
+       <h1>Interfaz Principal</h1>
+       <div class="feature">
+        <h3>🎯 Asistencia en Sala</h3>
+        <p>Solicita ayuda o servicios directamente desde tu dispositivo mientras disfrutas de la sala.</p>
+       </div>
+       <div class="feature">
+        <h3>💳 Carga de Créditos</h3>
+        <p>Recarga saldo de manera fácil y segura para usar en todas las áreas del establecimiento.</p>
+       </div>
+       <div class="feature">
+        <h3>🍽️ Gastronomía</h3>
+        <p>Explora el menú completo y ordena tus alimentos y bebidas favoritas directamente desde la app.</p>
+       </div>
+      </div>
+      <img src="assets/index.jpeg" alt="Interfaz Principal" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+     </div>
+    </div>
+
+    <!-- Slide 20: Cierre -->
+    <div class="slide slide-10">
+     <h1>Ey Oasis<br>Redefiniendo el Entretenimiento</h1>
+     <p style="font-size: 1.5em; margin: 1.5em 0;">Una experiencia única a tu alcance</p>
+     <div class="contact-box" style="margin: 3em 0;">
+      <p style="font-size: 1.3em; margin: 0.5em 0;">📧 contacto@eyoasis.com</p>
+      <p style="font-size: 1.3em; margin: 0.5em 0;">🌐 www.eyoasis.com</p>
+     </div>
+     <p style="margin-top: 3em; font-size: 2.5em; font-weight: 600;">¡Gracias!</p>
+     <p style="margin-top: 1em; font-size: 1.2em; opacity: 0.8;">Ahora estás listo para guiar a tus clientes</p>
+    </div>
+
+   </div>
+   <div class="controls">
+    <div class="nav-buttons"><button class="nav-btn" id="prevBtn">← Anterior</button> <button class="nav-btn" id="nextBtn">Siguiente →</button>
+    </div>
+    <div class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">20</span>
+    </div>
+   </div>
+  </div>
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 20;
+
+    function showSlide(n) {
+      const slides = document.querySelectorAll('.slide');
+      
+      if (n > totalSlides) {
+        currentSlide = totalSlides;
+      } else if (n < 1) {
+        currentSlide = 1;
+      } else {
+        currentSlide = n;
+      }
+
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[currentSlide - 1].classList.add('active');
+
+      // Scroll to top when changing slides
+      document.querySelector('.slide-container').scrollTop = 0;
+
+      document.getElementById('currentSlide').textContent = currentSlide;
+      document.getElementById('prevBtn').disabled = currentSlide === 1;
+      document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      showSlide(currentSlide - 1);
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      showSlide(currentSlide + 1);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        showSlide(currentSlide - 1);
+      } else if (e.key === 'ArrowRight') {
+        showSlide(currentSlide + 1);
+      }
+    });
+
+    document.getElementById('totalSlides').textContent = totalSlides;
+    showSlide(1);
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b41697b75f56ccb',t:'MTc2Njc2MDg1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
