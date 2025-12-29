@@ -439,6 +439,70 @@ html, body {
   line-height: 1.6;
 }
 
+/* Slide Flow - Flujo de conexión y asistencia */
+.slide-flow {
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
+  padding: 5%;
+}
+
+.slide-flow .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slide-flow h1 {
+  font-size: 3.5em;
+  color: #B30000;
+  margin-bottom: 0.3em;
+  font-weight: 700;
+}
+
+.slide-flow .step-number {
+  display: inline-block;
+  background: #B30000;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  line-height: 60px;
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.slide-flow p {
+  font-size: 1.4em;
+  color: #333333;
+  line-height: 1.8;
+  margin-bottom: 2em;
+}
+
+.slide-flow .info-box {
+  background: white;
+  padding: 2.5em;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(179,0,0,0.1);
+  margin-top: 1em;
+  text-align: left;
+}
+
+.slide-flow .info-box h3 {
+  color: #B30000;
+  font-size: 1.3em;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+}
+
+.slide-flow .info-box p {
+  font-size: 1.1em;
+  color: #555555;
+}
+
 /* Slide 10 - Cierre */
 .slide-10 {
   background: linear-gradient(135deg, #B30000 0%, #8B0000 100%);
@@ -529,7 +593,7 @@ html, body {
   /* Typography */
   .slide-1 h1 { font-size: 2.5em; }
   .slide-1 h2 { font-size: 1.2em; }
-  .slide-2 h1, .slide-3 h1, .slide-4 h1, .slide-5 h1, .slide-6 h1, .slide-7 h1, .slide-8 h1, .slide-9 h1 {
+  .slide-2 h1, .slide-3 h1, .slide-4 h1, .slide-5 h1, .slide-6 h1, .slide-7 h1, .slide-8 h1, .slide-9 h1, .slide-flow h1 {
     font-size: 2em;
   }
   .slide-10 h1 { font-size: 2em; }
@@ -541,6 +605,7 @@ html, body {
   .slide-8 .content,
   .slide-4 .content > div,
   .slide-5 .content > div,
+  .slide-flow .content > div,
   .slide-6 .content > div,
   .slide-7 .content > div {
     grid-template-columns: 1fr !important;

@@ -27,7 +27,6 @@ export interface SlideData {
 }
 
 export const slides: SlideData[] = [
-    // Slide 1: Portada
     {
         type: 'cover',
         className: 'slide-1',
@@ -39,8 +38,6 @@ export const slides: SlideData[] = [
             bgColor: 'red'
         }
     },
-
-    // Slide 2: ¿Qué es Ey Oasis?
     {
         type: 'intro',
         className: 'slide-2',
@@ -51,8 +48,6 @@ export const slides: SlideData[] = [
             bgColor: 'white'
         }
     },
-
-    // Slide 3: Pantalla de Bienvenida
     {
         type: 'welcome',
         className: 'slide-3',
@@ -72,8 +67,6 @@ export const slides: SlideData[] = [
             bgColor: 'white'
         }
     },
-
-    // Slide 4: Paso 1 - Email
     {
         type: 'step',
         className: 'slide-4',
@@ -90,7 +83,6 @@ export const slides: SlideData[] = [
         }
     },
 
-    // Slide 5: Paso 1 - Verificación Email
     {
         type: 'step',
         className: 'slide-4',
@@ -121,7 +113,6 @@ export const slides: SlideData[] = [
             }
         }
     },
-    // Slide 9: Paso 3 - Solicitud de Permisos
     {
         type: 'step',
         className: 'slide-5',
@@ -182,8 +173,6 @@ export const slides: SlideData[] = [
             }
         }
     },
-
-    // Slide: Promo (usar imagen de crear contraseña)
     {
         type: 'step',
         className: 'slide-5',
@@ -199,10 +188,6 @@ export const slides: SlideData[] = [
             },
         }
     },
-
-
-
-    // Slide 14: Paso 4
     {
         type: 'step',
         className: 'slide-5',
@@ -218,8 +203,6 @@ export const slides: SlideData[] = [
             }
         }
     },
-    
-    // Slide 17: Login
     {
         type: 'login',
         className: 'slide-7',
@@ -234,8 +217,6 @@ export const slides: SlideData[] = [
             }
         }
     },
-
-    // Slide 18: Login Exitoso
     {
         type: 'login',
         className: 'slide-7',
@@ -250,8 +231,6 @@ export const slides: SlideData[] = [
             }
         }
     },
-
-    // Slide 19: Pantalla Principal
     {
         type: 'main',
         className: 'slide-8',
@@ -278,8 +257,111 @@ export const slides: SlideData[] = [
             bgColor: 'white'
         }
     },
-
-    // Slide 20: Cierre
+    {
+        type: 'step',
+        className: 'slide-flow',
+        content: {
+            stepNumber: 1,
+            title: 'Conexión Requerida',
+            description: 'Para acceder a los servicios, primero debes vincularte a una terminal.',
+            image: 'maquinaRequerida.jpeg',
+            grid: true,
+            infoBox: {
+                title: 'Escaneo inicial',
+                description: 'Toca el botón rojo central para abrir la cámara y escanear el código QR de la máquina.'
+            }
+        }
+    },
+    {
+        type: 'step',
+        className: 'slide-flow',
+        content: {
+            stepNumber: 2,
+            title: 'Permisos de Cámara',
+            description: 'La aplicación solicitará acceso a tu cámara para poder leer los códigos QR.',
+            image: 'PermisosCamaraScanMaquina.jpeg',
+            grid: true,
+            infoBox: {
+                title: 'Configuración',
+                description: 'Selecciona "Mientras la app está en uso" para garantizar un funcionamiento fluido.'
+            }
+        }
+    },
+    {
+        type: 'step',
+        className: 'slide-flow',
+        content: {
+            stepNumber: 3,
+            title: 'Escaneo del QR',
+            description: 'Apunta con el visor hacia el código QR que se encuentra en la pantalla de la máquina.',
+            image: 'ScanQr.jpeg',
+            grid: true,
+            infoBox: {
+                title: 'Ayuda visual',
+                description: 'Asegúrate de que el código quede dentro del marco rojo para que la lectura sea instantánea.'
+            }
+        }
+    },
+    {
+        type: 'step',
+        className: 'slide-flow',
+        content: {
+            stepNumber: 4,
+            title: 'Máquina Conectada',
+            description: 'Una vez reconocido el QR, verás el mensaje de confirmación y el ID de la máquina activa.',
+            image: 'QrScan.jpeg',
+            grid: true,
+            infoBox: {
+                title: 'Estado de conexión',
+                description: 'El indicador celeste "Conexión activa" confirma que ya puedes realizar pedidos o pedir asistencia.'
+            }
+        }
+    },
+    {
+        type: 'step',
+        className: 'slide-flow',
+        content: {
+            stepNumber: 5,
+            title: 'Solicitud de Asistencia',
+            description: 'Al solicitar ayuda, el sistema procesará tu requerimiento de forma inmediata.',
+            image: 'ProcesoSolicitud.jpeg',
+            grid: true,
+            infoBox: {
+                title: 'Procesando',
+                description: 'Espera un momento mientras notificamos al personal de sala sobre tu ubicación.'
+            }
+        }
+    },
+    {
+        type: 'step',
+        className: 'slide-flow',
+        content: {
+            stepNumber: 6,
+            title: 'Seguimiento en Tiempo Real',
+            description: 'Podrás ver el estado de tu solicitud directamente en la pantalla principal.',
+            image: 'SolicitudEnProceso.jpeg',
+            grid: true,
+            infoBox: {
+                title: 'En Proceso',
+                description: 'El estado cambiará a "En Proceso" cuando un miembro del personal esté camino a tu posición.'
+            }
+        }
+    },
+    {
+        type: 'step',
+        className: 'slide-flow',
+        content: {
+            stepNumber: 7,
+            title: 'Solicitud Completada',
+            description: 'Una vez que hayas sido atendido, recibirás la confirmación de cierre de la solicitud.',
+            image: 'SolicitudFinalizada.jpeg',
+            grid: true,
+            infoBox: {
+                title: 'Finalizado',
+                description: 'La tarjeta de asistencia se cerrará automáticamente en unos segundos.'
+            }
+        }
+    },
     {
         type: 'closing',
         className: 'slide-10',
