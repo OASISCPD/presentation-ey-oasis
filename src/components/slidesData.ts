@@ -90,7 +90,7 @@ export const slides: SlideData[] = [
             stepNumber: 2,
             title: 'Verificación de Email',
             description: 'Se envía un código de 6 dígitos al correo electrónico proporcionado.',
-            image: '2stepCode.jpeg',
+            image: '2stepCodeSuccess.jpeg',
             grid: true,
             infoBox: {
                 title: '¿Qué decirle al cliente?',
@@ -105,7 +105,7 @@ export const slides: SlideData[] = [
             stepNumber: 2,
             title: 'Confirmación de Email',
             description: 'La app muestra alertas para confirmar la verificación del correo.',
-            image: '2stepCodeSuccess.jpeg',
+            image: '2stepCode.jpeg',
             grid: true,
             infoBox: {
                 title: 'Mensaje al cliente',
