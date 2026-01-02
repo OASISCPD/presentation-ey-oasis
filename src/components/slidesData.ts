@@ -26,7 +26,7 @@ export interface SlideData {
     };
 }
 
-export const slides: SlideData[] = [
+export const clientSlides: SlideData[] = [
     {
         type: 'cover',
         className: 'slide-1',
@@ -178,7 +178,7 @@ export const slides: SlideData[] = [
         className: 'slide-5',
         content: {
             title: 'Crea tu Contraseña',
-            stepNumber:4,
+            stepNumber: 4,
             description: 'Asegúrate de elegir una contraseña segura. Aquí te mostramos cómo hacerlo paso a paso.',
             image: '4step.jpeg',
             grid: true,
@@ -374,3 +374,168 @@ export const slides: SlideData[] = [
     }
 ];
 
+export const staffSlides: SlideData[] = [
+    {
+        type: 'cover',
+        className: 'slide-1',
+        content: {
+            title: 'Ey Oasis Staff',
+            subtitle: 'Panel de Gestión para Empleados',
+            description: 'Guía de uso para la atención y resolución de solicitudes en sala',
+            image: '/employeed/home.jpeg',
+            bgColor: 'red'
+        }
+    },
+    {
+        type: 'login',
+        className: 'slide-7',
+        content: {
+            title: 'Acceso de Personal',
+            description: 'Ingreso seguro mediante credenciales únicas de empleado.',
+            image: '/employeed/login.jpeg',
+            grid: true,
+            infoBox: {
+                title: 'Credenciales',
+                description: 'Ingresa tu número de legajo/usuario (ej: 13763) y tu contraseña asignada por administración.'
+            }
+        }
+    },
+    {
+        type: 'step',
+        className: 'slide-5',
+        content: {
+            stepNumber: 1,
+            title: 'Configuración de Alertas',
+            description: 'Es vital activar las notificaciones push para recibir avisos en tiempo real.',
+            image: '/employeed/alertsPopup.jpeg',
+            grid: true,
+            infoBox: {
+                title: 'Importante',
+                description: 'Sin este permiso, no te enterarás cuando un cliente en sala solicite tu asistencia.'
+            }
+        }
+    },
+    {
+        type: 'main',
+        className: 'slide-8',
+        content: {
+            title: 'Perfil y Suscripciones',
+            description: 'Configura qué tipo de solicitudes deseas atender según tu rol en la sala.',
+            features: [
+                {
+                    title: 'Suscripciones',
+                    description: 'Activa o desactiva categorías como "Ficheros", "Gastronomía" o "Atención al Cliente".'
+                },
+                {
+                    title: 'Estado',
+                    description: 'Verifica que tus notificaciones estén activas y tu sesión iniciada.'
+                }
+            ],
+            image: '/employeed/suscribeProfile.jpeg',
+            bgColor: 'white'
+        }
+    },
+    {
+        type: 'step',
+        className: 'slide-flow',
+        content: {
+            stepNumber: 2,
+            title: 'Recepción de Solicitud',
+            description: 'Las nuevas solicitudes aparecen como notificaciones flotantes y en el listado "Pendientes".',
+            image: '/employeed/homeSolicitud.jpeg',
+            grid: true,
+            infoBox: {
+                title: 'Información Clave',
+                description: 'La alerta indica la Sala (ej: EP2) y el número de Máquina/EGM (ej: 2401508) para ubicar al cliente.'
+            }
+        }
+    },
+    {
+        type: 'step',
+        className: 'slide-flow',
+        content: {
+            stepNumber: 3,
+            title: 'Panel de Gestión',
+            description: 'Visualiza todas las tarjetas de solicitud con los datos del cliente.',
+            image: '/employeed/panelPending.png',
+            grid: true,
+            infoBox: {
+                title: 'Tarjeta "Pendiente"',
+                description: 'Identifica la solicitud por la etiqueta roja. Verás el nombre del cliente (ej: Manuel Arcos) y documento.'
+            }
+        }
+    },
+    {
+        type: 'step',
+        className: 'slide-flow',
+        content: {
+            stepNumber: 4,
+            title: 'Tomar Solicitud',
+            description: 'Al presionar "Tomar Solicitud", confirmas que estás en camino a atender al cliente.',
+            image: '/employeed/panelProgress.jpeg',
+            grid: true,
+            infoBox: {
+                title: 'Cambio de Estado',
+                description: 'La tarjeta cambia a color verde ("En Proceso") y el cliente recibe una notificación de que vas en camino.'
+            }
+        }
+    },
+    {
+        type: 'step',
+        className: 'slide-flow',
+        content: {
+            stepNumber: 5,
+            title: 'Validación por QR',
+            description: 'Al llegar a la máquina, se abrirá la cámara automáticamente. Debes apuntar al código QR pegado en la máquina.',
+            image: '/employeed/scanQr.jpeg', // Referencia a tu imagen de la cámara con el cuadro verde
+            grid: true,
+            infoBox: {
+                title: 'Match de Seguridad',
+                description: 'El sistema te mostrará el "Número esperado" (ej: 2401508). Si escaneas una máquina distinta, el sistema bloqueará el cierre.'
+            }
+        }
+    },
+    {
+        type: 'step',
+        className: 'slide-flow',
+        content: {
+            stepNumber: 6,
+            title: 'Confirmación y Cierre',
+            description: 'El sistema valida el código escaneado en tiempo real.',
+            image: '/employeed/scanQrSuccess.jpeg', // Referencia a la imagen del modal verde o rojo
+            grid: true,
+            infoBox: {
+                title: 'Resultado',
+                description: '❌ Rojo: Código erróneo, debes reintentar.\n✅ Verde: ¡Código correcto! La solicitud se finaliza automáticamente y se guarda en el historial.'
+            }
+        }
+    },
+    {
+        type: 'step',
+        className: 'slide-flow',
+        content: {
+            stepNumber: 7,
+            title: 'Finalizar Atención',
+            description: 'Una vez resuelto el requerimiento en la máquina, cierra la solicitud.',
+            image: '/employeed/panelFinished.jpeg',
+            grid: true,
+            infoBox: {
+                title: 'Cierre',
+                description: 'Presiona el botón "Finalizar". La solicitud pasará a la pestaña de historial como completada.'
+            }
+        }
+    },
+    {
+        type: 'closing',
+        className: 'slide-10',
+        content: {
+            title: 'Gestión Eficiente',
+            subtitle: 'Optimizando la atención en sala',
+            description: 'Tu herramienta para brindar el mejor servicio.',
+            bgColor: 'red'
+        }
+    }
+];
+
+// Mantener compatibilidad con código existente
+export const slides = clientSlides;

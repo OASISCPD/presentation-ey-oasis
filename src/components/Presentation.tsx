@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react';
 import './Presentation.css';
 import NavigationControls from './NavigationControls';
-import { slides } from './slidesData';
+import { clientSlides, staffSlides } from './slidesData';
 import SlideRenderer from './SlideRenderer';
 
+type PresentationMode = 'client' | 'staff';
+
 const Presentation = () => {
+  const [mode, setMode] = useState<PresentationMode>('client');
   const [currentSlide, setCurrentSlide] = useState(1);
-  const totalSlides = slides.length;
+  
+  const currentSlides = mode === 'client' ? clientSlides : staffSlides;
+  const totalSlides = currentSlides.length;
 
   const showSlide = (n: number) => {
     if (n > totalSlides) {
@@ -20,6 +25,11 @@ const Presentation = () => {
 
   const nextSlide = () => showSlide(currentSlide + 1);
   const prevSlide = () => showSlide(currentSlide - 1);
+
+  const handleModeChange = (newMode: PresentationMode) => {
+    setMode(newMode);
+    setCurrentSlide(1); // Reset a la primera slide al cambiar de modo
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -43,8 +53,24 @@ const Presentation = () => {
 
   return (
     <div className="presentation-wrapper">
+      {/* Selector de Modo */}
+      <div className="mode-selector">
+        <button 
+          className={`mode-btn ${mode === 'client' ? 'active' : ''}`}
+          onClick={() => handleModeChange('client')}
+        >
+          👤 Cliente
+        </button>
+        <button 
+          className={`mode-btn ${mode === 'staff' ? 'active' : ''}`}
+          onClick={() => handleModeChange('staff')}
+        >
+          👔 Empleado
+        </button>
+      </div>
+
       <div className="slide-container">
-        {slides.map((slide: any, index: number) => (
+        {currentSlides.map((slide: any, index: number) => (
           <div
             key={index}
             className={`slide ${slide.className} ${currentSlide === index + 1 ? 'active' : ''}`}
