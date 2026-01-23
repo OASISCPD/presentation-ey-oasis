@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { FaBriefcase, FaUser } from 'react-icons/fa6';
 import './Presentation.css';
 import NavigationControls from './NavigationControls';
 import { clientSlides, staffSlides } from './slidesData';
@@ -9,11 +10,19 @@ type PresentationMode = 'client' | 'staff';
 const Presentation = () => {
   const [mode, setMode] = useState<PresentationMode>('client');
   const [currentSlide, setCurrentSlide] = useState(1);
-  
+  const lastNavTimeRef = useRef(0);
+
   const currentSlides = mode === 'client' ? clientSlides : staffSlides;
   const totalSlides = currentSlides.length;
+  const slideTitles = currentSlides.map((slide) => slide.content.title);
 
   const showSlide = (n: number) => {
+    const now = Date.now();
+    if (now - lastNavTimeRef.current < 250) {
+      return;
+    }
+    lastNavTimeRef.current = now;
+
     if (n > totalSlides) {
       setCurrentSlide(totalSlides);
     } else if (n < 1) {
@@ -55,17 +64,19 @@ const Presentation = () => {
     <div className="presentation-wrapper">
       {/* Selector de Modo */}
       <div className="mode-selector">
-        <button 
+        <button
           className={`mode-btn ${mode === 'client' ? 'active' : ''}`}
           onClick={() => handleModeChange('client')}
         >
-          👤 Cliente
+          <FaUser aria-hidden="true" />
+          Cliente
         </button>
-        <button 
+        <button
           className={`mode-btn ${mode === 'staff' ? 'active' : ''}`}
           onClick={() => handleModeChange('staff')}
         >
-          👔 Empleado
+          <FaBriefcase aria-hidden="true" />
+          Empleado
         </button>
       </div>
 
@@ -84,6 +95,8 @@ const Presentation = () => {
         totalSlides={totalSlides}
         onNext={nextSlide}
         onPrev={prevSlide}
+        onJump={showSlide}
+        slideTitles={slideTitles}
       />
     </div>
   );

@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react';
+import { FaCreditCard, FaEnvelope, FaHeadset, FaUtensils } from 'react-icons/fa6';
 import type { SlideData } from './slidesData';
 
 interface SlideRendererProps {
@@ -8,6 +10,12 @@ const SlideRenderer = ({ slide }: SlideRendererProps) => {
   const getImagePath = (imageName?: string) => {
     if (!imageName) return '';
     return `/assets/${imageName}`;
+  };
+
+  const iconMap: Record<string, ReactElement> = {
+    assist: <FaHeadset aria-hidden="true" />,
+    credits: <FaCreditCard aria-hidden="true" />,
+    food: <FaUtensils aria-hidden="true" />,
   };
 
   if (slide.type === 'cover') {
@@ -24,9 +32,7 @@ const SlideRenderer = ({ slide }: SlideRendererProps) => {
             alt={slide.content.title}
             style={{ 
               width: '60%', 
-              maxWidth: '500px', 
-              borderRadius: '20px', 
-              boxShadow: '0 10px 40px rgba(0,0,0,0.3)' 
+              maxWidth: '500px' 
             }}
           />
         )}
@@ -50,9 +56,7 @@ const SlideRenderer = ({ slide }: SlideRendererProps) => {
             src={getImagePath(slide.content.image)} 
             alt={slide.content.title}
             style={{ 
-              width: '100%', 
-              borderRadius: '20px', 
-              boxShadow: '0 10px 30px rgba(0,0,0,0.1)' 
+              width: '100%' 
             }}
           />
         )}
@@ -77,9 +81,7 @@ const SlideRenderer = ({ slide }: SlideRendererProps) => {
             src={getImagePath(slide.content.image)} 
             alt={slide.content.title}
             style={{ 
-              width: '100%', 
-              borderRadius: '20px', 
-              boxShadow: '0 10px 30px rgba(0,0,0,0.1)' 
+              width: '100%' 
             }}
           />
         )}
@@ -125,9 +127,7 @@ const SlideRenderer = ({ slide }: SlideRendererProps) => {
               src={getImagePath(slide.content.image)} 
               alt={slide.content.title}
               style={{ 
-                width: '100%', 
-                borderRadius: '20px', 
-                boxShadow: '0 10px 30px rgba(0,0,0,0.1)' 
+                width: '100%' 
               }}
             />
           )}
@@ -171,9 +171,7 @@ const SlideRenderer = ({ slide }: SlideRendererProps) => {
               src={getImagePath(slide.content.image)} 
               alt={slide.content.title}
               style={{ 
-                width: '100%', 
-                borderRadius: '20px', 
-                boxShadow: '0 10px 30px rgba(0,0,0,0.1)' 
+                width: '100%' 
               }}
             />
           )}
@@ -210,9 +208,7 @@ const SlideRenderer = ({ slide }: SlideRendererProps) => {
               src={getImagePath(slide.content.image)} 
               alt={slide.content.title}
               style={{ 
-                width: '100%', 
-                borderRadius: '20px', 
-                boxShadow: '0 10px 30px rgba(0,0,0,0.1)' 
+                width: '100%' 
               }}
             />
           )}
@@ -228,7 +224,12 @@ const SlideRenderer = ({ slide }: SlideRendererProps) => {
           <h1>{slide.content.title}</h1>
           {slide.content.features?.map((feature, index) => (
             <div key={index} className="feature">
-              <h3>{feature.icon} {feature.title}</h3>
+              <h3>
+                {feature.icon ? (
+                  <span className="feature-icon">{iconMap[feature.icon] ?? null}</span>
+                ) : null}
+                {feature.title}
+              </h3>
               <p>{feature.description}</p>
             </div>
           ))}
@@ -238,9 +239,7 @@ const SlideRenderer = ({ slide }: SlideRendererProps) => {
             src={getImagePath(slide.content.image)} 
             alt={slide.content.title}
             style={{ 
-              width: '100%', 
-              borderRadius: '20px', 
-              boxShadow: '0 10px 30px rgba(0,0,0,0.1)' 
+              width: '100%' 
             }}
           />
         )}
@@ -256,12 +255,17 @@ const SlideRenderer = ({ slide }: SlideRendererProps) => {
           {slide.content.subtitle}
         </p>
         <div className="contact-box" style={{ margin: '3em 0' }}>
-          <p style={{ fontSize: '1.3em', margin: '0.5em 0' }}>📧 celulaproyectosdigitales@bingopilar.com.ar</p>
+          <p style={{ fontSize: '1.3em', margin: '0.5em 0' }}>
+            <span className="contact-icon" aria-hidden="true">
+              <FaEnvelope />
+            </span>
+            celulaproyectosdigitales@bingopilar.com.ar
+          </p>
         </div>
 
         <div className="drive-cta" style={{ marginTop: '1.5em' }}>
           <p className="drive-note" style={{ marginBottom: '1rem', fontSize: '1.05em' }}>
-            Para descargar las APKs, primero abre la carpeta de Google Drive donde están alojadas.
+            Para descargar las APKs, primero abre la carpeta de Google Drive donde estÃ¡n alojadas.
           </p>
           <a
             href="https://drive.google.com/drive/folders/1FG29tvDcwSYLjSoosrLcivYcbWgQthTB?usp=sharing"
@@ -274,12 +278,10 @@ const SlideRenderer = ({ slide }: SlideRendererProps) => {
             Abrir carpeta de descargas (Google Drive)
           </a>
         </div>
-        <p style={{ marginTop: '3em', fontSize: '2.5em', fontWeight: 600 }}>
+        <p className="closing-thanks">
           {slide.content.description}
         </p>
-        <p style={{ marginTop: '1em', fontSize: '1.2em', opacity: 0.8 }}>
-          Ahora estás listo para guiar a tus clientes
-        </p>
+        <p className="closing-note">Ahora estás listo para guiar a tus clientes</p>
       </>
     );
   }

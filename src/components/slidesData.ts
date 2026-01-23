@@ -238,17 +238,17 @@ export const clientSlides: SlideData[] = [
             title: 'Interfaz Principal',
             features: [
                 {
-                    icon: '🎯',
+                    icon: 'assist',
                     title: 'Asistencia en Sala',
                     description: 'Solicita ayuda o servicios directamente desde tu dispositivo mientras disfrutas de la sala.'
                 },
                 {
-                    icon: '💳',
+                    icon: 'credits',
                     title: 'Carga de Créditos',
                     description: 'Recarga saldo de manera fácil y segura para usar en todas las áreas del establecimiento.'
                 },
                 {
-                    icon: '🍽️',
+                    icon: 'food',
                     title: 'Gastronomía',
                     description: 'Explora el menú completo y ordena desde la app.'
                 }
@@ -366,7 +366,7 @@ export const clientSlides: SlideData[] = [
         type: 'closing',
         className: 'slide-10',
         content: {
-            title: 'Ey Oasis\nRedefiniendo el Entretenimiento',
+            title: 'Redefiniendo el Entretenimiento',
             subtitle: 'Una experiencia única a tu alcance',
             description: '¡Gracias!',
             bgColor: 'red'
@@ -382,7 +382,7 @@ export const staffSlides: SlideData[] = [
             title: 'Ey Oasis Staff',
             subtitle: 'Panel de Gestión para Empleados',
             description: 'Guía de uso para la atención y resolución de solicitudes en sala',
-            image: '/employeed/home.jpeg',
+            image: '/employeed/home.png',
             bgColor: 'red'
         }
     },
@@ -392,7 +392,7 @@ export const staffSlides: SlideData[] = [
         content: {
             title: 'Acceso de Personal',
             description: 'Ingreso seguro mediante credenciales únicas de empleado.',
-            image: '/employeed/login.jpeg',
+            image: '/employeed/login.png',
             grid: true,
             infoBox: {
                 title: 'Credenciales',
@@ -407,7 +407,7 @@ export const staffSlides: SlideData[] = [
             stepNumber: 1,
             title: 'Configuración de Alertas',
             description: 'Es vital activar las notificaciones push para recibir avisos en tiempo real.',
-            image: '/employeed/alertsPopup.jpeg',
+            image: '/employeed/alertsPopup.png',
             grid: true,
             infoBox: {
                 title: 'Importante',
@@ -431,7 +431,7 @@ export const staffSlides: SlideData[] = [
                     description: 'Verifica que tus notificaciones estén activas y tu sesión iniciada.'
                 }
             ],
-            image: '/employeed/suscribeProfile.jpeg',
+            image: '/employeed/suscribeProfile.png',
             bgColor: 'white'
         }
     },
@@ -442,7 +442,7 @@ export const staffSlides: SlideData[] = [
             stepNumber: 2,
             title: 'Recepción de Solicitud',
             description: 'Las nuevas solicitudes aparecen como notificaciones flotantes y en el listado "Pendientes".',
-            image: '/employeed/homeSolicitud.jpeg',
+            image: '/employeed/homeSolicitud.png',
             grid: true,
             infoBox: {
                 title: 'Información Clave',
@@ -472,7 +472,7 @@ export const staffSlides: SlideData[] = [
             stepNumber: 4,
             title: 'Tomar Solicitud',
             description: 'Al presionar "Tomar Solicitud", confirmas que estás en camino a atender al cliente.',
-            image: '/employeed/panelProgress.jpeg',
+            image: '/employeed/panelProgress.png',
             grid: true,
             infoBox: {
                 title: 'Cambio de Estado',
@@ -487,7 +487,7 @@ export const staffSlides: SlideData[] = [
             stepNumber: 5,
             title: 'Validación por QR',
             description: 'Al llegar a la máquina, se abrirá la cámara automáticamente. Debes apuntar al código QR pegado en la máquina.',
-            image: '/employeed/scanQr.jpeg', // Referencia a tu imagen de la cámara con el cuadro verde
+            image: '/employeed/scanQr.png', // Referencia a tu imagen de la cámara con el cuadro verde
             grid: true,
             infoBox: {
                 title: 'Match de Seguridad',
@@ -502,11 +502,11 @@ export const staffSlides: SlideData[] = [
             stepNumber: 6,
             title: 'Confirmación y Cierre',
             description: 'El sistema valida el código escaneado en tiempo real.',
-            image: '/employeed/scanQrSuccess.jpeg', // Referencia a la imagen del modal verde o rojo
+            image: '/employeed/scanQrSuccess.png', // Referencia a la imagen del modal verde o rojo
             grid: true,
             infoBox: {
                 title: 'Resultado',
-                description: '❌ Rojo: Código erróneo, debes reintentar.\n✅ Verde: ¡Código correcto! La solicitud se finaliza automáticamente y se guarda en el historial.'
+                description: 'Rojo: Código erróneo, debes reintentar.\nVerde: ¡Código correcto! La solicitud se finaliza automáticamente y se guarda en el historial.'
             }
         }
     },
@@ -517,7 +517,7 @@ export const staffSlides: SlideData[] = [
             stepNumber: 7,
             title: 'Finalizar Atención',
             description: 'Una vez resuelto el requerimiento en la máquina, cierra la solicitud.',
-            image: '/employeed/panelFinished.jpeg',
+            image: '/employeed/panelFinished.png',
             grid: true,
             infoBox: {
                 title: 'Cierre',

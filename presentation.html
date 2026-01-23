@@ -65,14 +65,14 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 5%;
+      padding: 6% 6% 5%;
     }
 
     .slide-1 h1 {
       font-size: 4em;
       font-weight: 800;
       color: #ffffff;
-      margin-bottom: 0.5em;
+      margin: 0 0 0.35em 0;
       text-transform: uppercase;
       letter-spacing: 2px;
     }
@@ -81,8 +81,14 @@
       font-size: 1.8em;
       font-weight: 300;
       color: #ffffff;
-      margin-bottom: 2em;
+      margin-bottom: 1em;
       opacity: 0.9;
+    }
+
+    .home-description {
+      font-size: 1.1em;
+      color: rgba(255,255,255,0.8);
+      margin: 0.5em 0 1.2em 0;
     }
 
     .slide-1 .image-placeholder {
@@ -611,6 +617,39 @@
       margin-bottom: 0.5em;
     }
 
+    @media (min-width: 1024px) {
+      .slide-10 {
+        padding: 3.5% 6%;
+      }
+
+      .slide-10 h1 {
+        font-size: 2.4em;
+        margin-bottom: 0.4em;
+        line-height: 1.12;
+      }
+
+      .slide-10 p {
+        font-size: 1.25em;
+        margin-bottom: 0.9em;
+      }
+
+      .slide-10 .contact-box {
+        margin: 1.1em 0;
+        padding: 1.4em 2.2em;
+      }
+
+      .slide-10 .closing-title {
+        margin-top: 0.5em;
+        font-size: 1.95em;
+        letter-spacing: 0.01em;
+      }
+
+      .slide-10 .closing-note {
+        font-size: 1em;
+        opacity: 0.75;
+      }
+    }
+
     /* Navigation Controls */
     .controls {
       background: #2a2a2a;
@@ -658,10 +697,20 @@
       font-weight: 600;
     }
 
+    /* Mobile progress (hidden on desktop) */
+    .mobile-nav {
+      display: none;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
+      .slide {
+        padding: 6% 6%;
+      }
+
       .slide-1 h1 { font-size: 2.5em; }
       .slide-1 h2 { font-size: 1.2em; }
+      .home-description { font-size: 1em; margin: 0.5em 0 1.1em 0; }
       .slide-2 .content, .slide-3 .content, .slide-8 .content {
         grid-template-columns: 1fr;
         gap: 2em;
@@ -672,7 +721,135 @@
       .slide-9 .nav-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .slide-10 h1 { font-size: 2em; }
+      .slide-10 h1 { font-size: 1.9em; line-height: 1.2; }
+      .slide-10 p { font-size: 1.1em; margin-bottom: 1.1em; }
+      .slide-4 p,
+      .slide-5 p,
+      .slide-6 p,
+      .slide-7 p,
+      .slide-flow p {
+        font-size: 1.1em;
+        margin-bottom: 1.2em;
+      }
+      .slide-10 .contact-box { margin: 1.4em 0; padding: 1.4em 1.6em; }
+      .slide-10 .contact-box p { font-size: 1.05em; }
+      .slide-10 .subtitle { margin: 1em 0 1.1em; }
+      .slide-10 .closing-title { margin-top: 1em; font-size: 1.8em; }
+      .slide-10 .closing-note { margin-top: 0.6em; font-size: 1.05em; }
+
+      .slide img {
+        max-width: 100% !important;
+        width: 100% !important;
+        max-height: 45vh;
+        object-fit: contain;
+      }
+
+      .slide-1 img {
+        width: 80% !important;
+      }
+
+      .step-number {
+        width: 52px;
+        height: 52px;
+        line-height: 52px;
+        font-size: 1.6em;
+      }
+
+      .info-box,
+      .requirements,
+      .slide-6 .content {
+        padding: 1.2em;
+      }
+
+      .requirements h3,
+      .info-box h3 {
+        font-size: 1.15em;
+      }
+
+      .requirement-item {
+        font-size: 1.05em;
+      }
+
+      .info-box {
+        margin-top: 0.8em;
+      }
+
+      .requirements {
+        margin-top: 0.8em;
+      }
+
+      .feature-box,
+      .feature {
+        padding: 1.2em;
+      }
+
+      .controls {
+        padding: 1em 1.2em;
+        flex-direction: column;
+        gap: 0.8em;
+      }
+
+      .nav-buttons {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .nav-btn {
+        flex: 1;
+        padding: 0.8em 1.4em;
+      }
+
+      .slide-counter {
+        order: -1;
+      }
+
+      .slide-counter {
+        display: none;
+      }
+
+      .mobile-nav {
+        display: flex;
+        width: 100%;
+        padding: 0.2rem 0.2rem 0.4rem 0.2rem;
+        justify-content: center;
+      }
+
+      .progress-wrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .progress-track {
+        width: 100%;
+        height: 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #ff4d4d, #b30000);
+        transition: width 160ms ease;
+      }
+
+      .progress-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.95em;
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      .progress-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 70%;
+      }
     }
   </style>
   <style>@view-transition { navigation: auto; }</style>
@@ -688,7 +865,7 @@
     <div class="slide slide-1 active">
      <h1>Ey Oasis</h1>
      <h2>Tu Oasis de Entretenimiento</h2>
-     <p style="font-size: 1.2em; color: rgba(255,255,255,0.8); margin-bottom: 2em;">Guía completa del flujo de registro y uso</p>
+     <p class="home-description">Guía completa del flujo de registro y uso</p>
      <img src="assets/index.jpeg" alt="Ey Oasis" style="width: 60%; max-width: 500px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
     </div>
 
@@ -971,7 +1148,7 @@
          <p>"Ingresa tu número de usuario y contraseña para acceder a tu cuenta de Ey Oasis."</p>
         </div>
       </div>
-       <img src="assets/login.jpeg" alt="Login" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+       <img src="assets/login.png" alt="Login" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
       </div>
      </div>
     </div>
@@ -1018,28 +1195,35 @@
     <!-- Slide 20: Cierre -->
     <div class="slide slide-10">
      <h1>Ey Oasis<br>Redefiniendo el Entretenimiento</h1>
-     <p style="font-size: 1.5em; margin: 1.5em 0;">Una experiencia única a tu alcance</p>
-     <div class="contact-box" style="margin: 3em 0;">
-      <p style="font-size: 1.3em; margin: 0.5em 0;">📧 contacto@eyoasis.com</p>
-      <p style="font-size: 1.3em; margin: 0.5em 0;">🌐 www.eyoasis.com</p>
+     <p class="subtitle">Una experiencia única a tu alcance</p>
+     <div class="contact-box">
+      <p>📧 contacto@eyoasis.com</p>
+      <p>🌐 www.eyoasis.com</p>
      </div>
-     <p style="margin-top: 3em; font-size: 2.5em; font-weight: 600;">¡Gracias!</p>
-     <p style="margin-top: 1em; font-size: 1.2em; opacity: 0.8;">Ahora estás listo para guiar a tus clientes</p>
+     <p class="closing-title">¡Gracias!</p>
+     <p class="closing-note">Ahora estás listo para guiar a tus clientes</p>
     </div>
 
    </div>
    <div class="controls">
     <div class="nav-buttons"><button class="nav-btn" id="prevBtn">← Anterior</button> <button class="nav-btn" id="nextBtn">Siguiente →</button>
     </div>
-    <div class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">20</span>
+    <div class="mobile-nav" id="mobileNav" aria-label="Recorrido de slides"></div>
+    <div class="slide-counter">
+     <span id="currentSlide">1</span> / <span id="totalSlides">20</span>
     </div>
    </div>
   </div>
   <script>
     let currentSlide = 1;
     const totalSlides = 20;
+    let lastNavTime = 0;
 
     function showSlide(n) {
+      const now = Date.now();
+      if (now - lastNavTime < 250) return;
+      lastNavTime = now;
+
       const slides = document.querySelectorAll('.slide');
       
       if (n > totalSlides) {
@@ -1059,6 +1243,7 @@
       document.getElementById('currentSlide').textContent = currentSlide;
       document.getElementById('prevBtn').disabled = currentSlide === 1;
       document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+      updateMobileNav();
     }
 
     document.getElementById('prevBtn').addEventListener('click', () => {
@@ -1077,7 +1262,39 @@
       }
     });
 
+    function renderMobileNav() {
+      const container = document.getElementById('mobileNav');
+      if (!container) return;
+      container.innerHTML = `
+        <div class="progress-wrap" role="group" aria-label="Progreso de la presentación">
+          <div class="progress-track">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+          <div class="progress-meta">
+            <span class="progress-title" id="progressTitle"></span>
+            <span id="progressCount"></span>
+          </div>
+        </div>
+      `;
+    }
+
+    function updateMobileNav() {
+      const bar = document.getElementById('progressBar');
+      const title = document.getElementById('progressTitle');
+      const count = document.getElementById('progressCount');
+      if (!bar || !title || !count) return;
+      const slides = document.querySelectorAll('.slide');
+      const activeSlide = slides[currentSlide - 1];
+      const heading = activeSlide ? activeSlide.querySelector('h1') : null;
+      const label = heading ? heading.textContent : `Slide ${currentSlide}`;
+      const percent = Math.round((currentSlide / totalSlides) * 100);
+      bar.style.width = `${percent}%`;
+      title.textContent = label;
+      count.textContent = `${currentSlide} / ${totalSlides}`;
+    }
+
     document.getElementById('totalSlides').textContent = totalSlides;
+    renderMobileNav();
     showSlide(1);
   </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b41697b75f56ccb',t:'MTc2Njc2MDg1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
